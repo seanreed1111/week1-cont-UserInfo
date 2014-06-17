@@ -21,27 +21,24 @@ int main(int argc, char * argv[])
     
     [myInfo printUserInfo];
     
-    // count the number of newlines in each file
-    //read each newline from file
-    //split newline into words
-    // load words into new UserInfo object array
-    // repeat until you reach EOF
-    
-    
-    FILE *fp;
-    NSInteger ct;
-    NSMutableArray *arr =[[NSMutableArray alloc] init];
-    
-    const char filename[] = "/Users/seanreed/iosProjects/UserInfo/UserInfo/userinfodata.txt"; // absolute path needed
-    
-    if((fp = fopen(filename, "r"))){
-        
-        ct = countNewLines(fp);
-        fclose(fp);
-        
-        NSLog(@"The file has %zd lines\n", ct);
-    }
 
+    
+    NSString *location = @"/Users/seanreed/iosProjects/UserInfo/UserInfo/userinfodata.txt"; // absolute path needed
+    
+
+    
+    NSString *contents = [NSString stringWithContentsOfFile:location encoding:NSUTF8StringEncoding error:NULL];
+  
+    NSArray *lines = [[NSArray alloc] init];
+    
+    lines = [contents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    
+    for (NSString *line in lines){
+        NSLog(@"%@\n", line);
+    }
+    
+    // now separate each line into firstName, lastName, and the rest of the line as the address.
+    
     
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
