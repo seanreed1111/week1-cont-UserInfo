@@ -25,6 +25,10 @@
                lastName:(NSString *)lastName
                 address:(NSString *)address;
 
+- (id )init;
+
+- (id)initWithArray:(NSArray *)array;
+
 - (void)printUserInfo;
 
 

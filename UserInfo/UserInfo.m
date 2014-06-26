@@ -10,6 +10,21 @@
 
 @implementation UserInfo
 
+- (id)initWithArray: (NSArray *)array
+{
+    self = [super init];
+    
+    if(self)
+    {
+        self.firstName = array[0];
+        self.lastName = array[1];
+        self.address  = array[2];
+    }
+
+    return self;
+}
+
+// designated initializer
 - (id)initWithFirstName:(NSString *)firstName
                lastName:(NSString *)lastName
                 address:(NSString *)address
@@ -27,6 +42,14 @@
     return self;
 }
 
+
+// override init
+- (id )init
+{
+    return [self initWithFirstName:@"none"
+                          lastName:@"none"
+                           address:@"none"];
+}
 - (void)printUserInfo
 {
     if (self)

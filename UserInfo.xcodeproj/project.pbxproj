@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1407980D195CBD2500FEC431 /* userinfodata.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1407980C195CBD2500FEC431 /* userinfodata.txt */; };
 		14366198194F4400006F61E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14366197194F4400006F61E5 /* Foundation.framework */; };
 		1436619A194F4400006F61E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14366199194F4400006F61E5 /* CoreGraphics.framework */; };
 		1436619C194F4400006F61E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1436619B194F4400006F61E5 /* UIKit.framework */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1407980C195CBD2500FEC431 /* userinfodata.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = userinfodata.txt; sourceTree = "<group>"; };
 		14366194194F4400006F61E5 /* UserInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14366197194F4400006F61E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		14366199194F4400006F61E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -132,6 +134,7 @@
 		1436619E194F4400006F61E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1407980C195CBD2500FEC431 /* userinfodata.txt */,
 				143661AC194F4400006F61E5 /* ViewController.h */,
 				143661AD194F4400006F61E5 /* ViewController.m */,
 				143661A6194F4400006F61E5 /* AppDelegate.h */,
@@ -243,6 +246,7 @@
 			files = (
 				143661B0194F4400006F61E5 /* Images.xcassets in Resources */,
 				143661A2194F4400006F61E5 /* InfoPlist.strings in Resources */,
+				1407980D195CBD2500FEC431 /* userinfodata.txt in Resources */,
 				143661AB194F4400006F61E5 /* Main.storyboard in Resources */,
 				143661D8194F669D006F61E5 /* userinfodata.rtf in Resources */,
 			);
@@ -472,6 +476,7 @@
 				143661C8194F4400006F61E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		143661C9194F4400006F61E5 /* Build configuration list for PBXNativeTarget "UserInfoTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +485,7 @@
 				143661CB194F4400006F61E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -23,21 +23,65 @@ int main(int argc, char * argv[])
     
 
     
-    NSString *location = @"/Users/seanreed/iosProjects/UserInfo/UserInfo/userinfodata.txt"; // absolute path needed
+    NSString *fileLocation = @"/Users/seanreed/iosProjects/UserInfo/UserInfo/userinfodata.txt"; // absolute path needed
     
 
     
-    NSString *contents = [NSString stringWithContentsOfFile:location encoding:NSUTF8StringEncoding error:NULL];
+    NSString *fileContents = [NSString stringWithContentsOfFile:fileLocation encoding:NSUTF8StringEncoding error:NULL];
   
-    NSArray *lines = [[NSArray alloc] init];
+    NSArray *fileByLines = [[NSArray alloc] init];
     
-    lines = [contents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    fileByLines = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     
-    for (NSString *line in lines){
+    NSMutableArray *inputRecords = [[NSMutableArray alloc]init];
+    NSMutableArray *output = [[NSMutableArray alloc]init];
+    
+    for (NSString *line in fileByLines)
+    {
         NSLog(@"%@\n", line);
+        // now separate each array element 'line' into firstName, lastName, and address Assume CSV
+        [inputRecords addObject:[line componentsSeparatedByString:@","]];
     }
     
-    // now separate each line into firstName, lastName, and the rest of the line as the address.
+//    for (int i = 0; i < inputRecords.count-1; i++) {
+//        UserInfo *newUser = [[UserInfo alloc]init];
+//        newUser.firstName = inputRecords[i][0];
+//        newUser.lastName = inputRecords[i][1];
+//        newUser.address  = inputRecords[i][2];
+//        [output addObject:newUser];
+//    }
+    
+    for(NSArray *record in inputRecords)
+    {
+        if([record isEqualToArray:@[@""]])
+        {
+            [output addObject:@""];
+        }
+        else
+        {
+            [output addObject:[[UserInfo alloc]initWithArray:record]];
+        }
+        
+    }
+    
+    NSLog(@"%@", output);
+
+//
+//    {
+//
+//    }
+    
+    // now create a new UserInfo instance for each record in records using the data given there
+
+    
+    // print each record
+ //   for(NSArray *record in inputRecords)
+     // take each record and use it to create a UserInfo object
+     // put the UserInfo object into the output array
+//        [ output addObject:[UserInfo initWithArray:record]];
+
+    
+
     
     
     @autoreleasepool {
