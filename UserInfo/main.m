@@ -11,21 +11,12 @@
 #import "AppDelegate.h"
 #import "UserInfo.h"
 #import "parse.h"
+#import "SimpleHashTable.h"
 
 int main(int argc, char * argv[])
 {
-    
-    UserInfo *myInfo = [[UserInfo alloc] initWithFirstName:@"Sean"
-                lastName:@"Reed"
-                address:@"1313 Mockingbird Lane"];
-    
-    [myInfo printUserInfo];
-    
-
-    
     NSString *fileLocation = @"/Users/seanreed/iosProjects/UserInfo/UserInfo/userinfodata.txt"; // absolute path needed
     
-
     
     NSString *fileContents = [NSString stringWithContentsOfFile:fileLocation encoding:NSUTF8StringEncoding error:NULL];
   
@@ -38,7 +29,6 @@ int main(int argc, char * argv[])
     
     for (NSString *line in fileByLines)
     {
-        NSLog(@"%@\n", line);
         // now separate each array element 'line' into firstName, lastName, and address Assume CSV
         [inputRecords addObject:[line componentsSeparatedByString:@","]];
     }
@@ -73,14 +63,29 @@ NSMutableDictionary *myDictionary = [[NSMutableDictionary alloc] init];
             }
         }
     }
-    NSLog(@"%@", myDictionary);
-
+   NSLog(@"Dictionary is \n%@", myDictionary);
     
-//    24. Implement a simple hash table
-//    • Define the interface first
-//    • Implement the methods
+    //    24. Implement a simple hash table
+    //    • Define the interface first
+    //    • Implement the methods
+// read the keys and values using output, to duplicate the functionality of the NSMutableDictionary
     
+    NSMutableArray *keys = [[NSMutableArray alloc]init];
+    NSMutableArray *values = [[NSMutableArray alloc]init];
+    
+    for (UserInfo *user in output)
+    {
+        if([user respondsToSelector:@selector(lastName)])
+        {
+            [keys addObject:user.lastName];
+            [values addObject:user.address];
+        }
+    }
 
+    SimpleHashTable *myTable = [[SimpleHashTable alloc]initWithObjects:values forKeys:keys];
+
+    [myTable show];
+    
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
