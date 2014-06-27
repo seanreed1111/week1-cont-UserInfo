@@ -76,15 +76,10 @@ NSMutableDictionary *myDictionary = [[NSMutableDictionary alloc] init];
     NSLog(@"%@", myDictionary);
 
     
-    // Oren's code
+//    24. Implement a simple hash table
+//    • Define the interface first
+//    • Implement the methods
     
-    //    for (int i = 0; i < inputRecords.count-1; i++) {
-    //        UserInfo *newUser = [[UserInfo alloc]init];
-    //        newUser.firstName = inputRecords[i][0];
-    //        newUser.lastName = inputRecords[i][1];
-    //        newUser.address  = inputRecords[i][2];
-    //        [output addObject:newUser];
-    //    }
 
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));

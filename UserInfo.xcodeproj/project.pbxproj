@@ -25,6 +25,7 @@
 		143661CE194F4456006F61E5 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 143661CD194F4456006F61E5 /* UserInfo.m */; };
 		143661D5194F620C006F61E5 /* parse.c in Sources */ = {isa = PBXBuildFile; fileRef = 143661D4194F620C006F61E5 /* parse.c */; };
 		143661D8194F669D006F61E5 /* userinfodata.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 143661D7194F669D006F61E5 /* userinfodata.rtf */; };
+		14A104FE195DCA2D005FA3E2 /* SimpleHashTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A104FD195DCA2D005FA3E2 /* SimpleHashTable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		143661D4194F620C006F61E5 /* parse.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parse.c; sourceTree = "<group>"; };
 		143661D6194F6231006F61E5 /* parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parse.h; sourceTree = "<group>"; };
 		143661D7194F669D006F61E5 /* userinfodata.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = userinfodata.rtf; sourceTree = "<group>"; };
+		14A104FC195DCA2D005FA3E2 /* SimpleHashTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleHashTable.h; sourceTree = "<group>"; };
+		14A104FD195DCA2D005FA3E2 /* SimpleHashTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleHashTable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				1436619E194F4400006F61E5 /* Supporting Files */,
 				143661CC194F4456006F61E5 /* UserInfo.h */,
 				143661CD194F4456006F61E5 /* UserInfo.m */,
+				14A104FC195DCA2D005FA3E2 /* SimpleHashTable.h */,
+				14A104FD195DCA2D005FA3E2 /* SimpleHashTable.m */,
 			);
 			path = UserInfo;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 				143661AE194F4400006F61E5 /* ViewController.m in Sources */,
 				143661A8194F4400006F61E5 /* AppDelegate.m in Sources */,
 				143661A4194F4400006F61E5 /* main.m in Sources */,
+				14A104FE195DCA2D005FA3E2 /* SimpleHashTable.m in Sources */,
 				143661D5194F620C006F61E5 /* parse.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
