@@ -43,13 +43,6 @@ int main(int argc, char * argv[])
         [inputRecords addObject:[line componentsSeparatedByString:@","]];
     }
     
-//    for (int i = 0; i < inputRecords.count-1; i++) {
-//        UserInfo *newUser = [[UserInfo alloc]init];
-//        newUser.firstName = inputRecords[i][0];
-//        newUser.lastName = inputRecords[i][1];
-//        newUser.address  = inputRecords[i][2];
-//        [output addObject:newUser];
-//    }
     
     for(NSArray *record in inputRecords)
     {
@@ -61,29 +54,38 @@ int main(int argc, char * argv[])
         {
             [output addObject:[[UserInfo alloc]initWithArray:record]];
         }
-        
     }
     
-    NSLog(@"%@", output);
+    
+//    • Identify duplicate names by using NSMutableDictionary with the above objects. Use names as keys and the objects
+//    above as values.
 
-//
-//    {
-//
-//    }
+
+NSMutableDictionary *myDictionary = [[NSMutableDictionary alloc] init];
     
-    // now create a new UserInfo instance for each record in records using the data given there
+    for (UserInfo *user in output)
+    {
+        if([user respondsToSelector:@selector(lastName)])
+        {
+            if(![myDictionary objectForKey:user.lastName])
+            {// add to dictionary
+                myDictionary[user.lastName] = user.address;
+            }
+        }
+    }
+    NSLog(@"%@", myDictionary);
 
     
-    // print each record
- //   for(NSArray *record in inputRecords)
-     // take each record and use it to create a UserInfo object
-     // put the UserInfo object into the output array
-//        [ output addObject:[UserInfo initWithArray:record]];
+    // Oren's code
+    
+    //    for (int i = 0; i < inputRecords.count-1; i++) {
+    //        UserInfo *newUser = [[UserInfo alloc]init];
+    //        newUser.firstName = inputRecords[i][0];
+    //        newUser.lastName = inputRecords[i][1];
+    //        newUser.address  = inputRecords[i][2];
+    //        [output addObject:newUser];
+    //    }
 
-    
-
-    
-    
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
